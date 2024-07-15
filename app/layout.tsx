@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/normalize.scss";
+import "@/styles/globals.scss";
+import StoreProvider from "./StoreProvider";
 
 export const metadata: Metadata = {
   title: "Educap",
@@ -14,7 +16,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <link rel="icon" href="./innovation_logo.png"></link>
-      <body>{children}</body>
+      <body>
+        <StoreProvider>
+          {children}
+        </StoreProvider>
+      </body>
     </html>
   );
 }
