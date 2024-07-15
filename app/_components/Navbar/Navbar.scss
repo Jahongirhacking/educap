@@ -1,0 +1,119 @@
+@mixin makeNavPadding() {
+  padding-top: 28px;
+  padding-bottom: 18px;
+}
+
+.fixed-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+
+  .page__nav {
+    width: 100%;
+    max-width: 1366px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+
+    picture {
+      @include makeNavPadding();
+
+      .logo {
+        width: 100px;
+        height: 26px;
+      }
+    }
+
+    .ant-anchor {
+      display: flex;
+      column-gap: 90px;
+      padding-bottom: 4px;
+      transform: translateY(4px);
+
+      &-ink {
+        background-color: #37a9e3 !important;
+      }
+
+      .ant-anchor-link-title {
+        color: white !important;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        font-family: "Exo2";
+      }
+    }
+
+    .language-select {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 12px;
+      padding-left: 54px;
+      padding-right: 5px;
+      border-left: 2px solid #2f2f2f;
+      @include makeNavPadding();
+
+      .select__icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .ant-select {
+        .ant-select-arrow {
+          color: white;
+          right: -20px;
+        }
+
+        .ant-select-selector {
+          background-color: transparent;
+          box-shadow: none !important;
+          border: none;
+          color: white;
+          padding: 0;
+
+          .ant-select-selection-item {
+            font-size: 16px;
+            font-weight: 600;
+            padding: 0;
+            font-family: "Exo2";
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+
+      .ant-select-open {
+        .ant-select-selection-item {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.ant-select-dropdown {
+  width: max-content !important;
+  background-color: black;
+
+  .rc-virtual-list-holder-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .ant-select-item {
+    color: white;
+    font-family: "Exo2";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    min-width: 65px;
+  }
+}
