@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "Exo2";
+  src: url("../../../assets/fonts/Exo2/static/Exo2-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  font-weight: 400;
+  src: url("../../../assets/fonts/Unbounded/static/Unbounded-Regular.ttf")
+    format("truetype");
+}
+
+.page__goals {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 24px;
+  row-gap: 50px;
+  padding-top: 101px;
+  padding-bottom: 113px;
+
+  .goals__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 330px;
+
+    h2 {
+      font-family: "Unbounded";
+      font-weight: 500;
+      font-size: 35px;
+      line-height: 43.4px;
+    }
+
+    p {
+      font-family: "Exo2";
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 31px;
+    }
+  }
+
+  .player__wrapper {
+    width: 100%;
+    height: 463px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: 50%;
+      transform: translateX(210px);
+      bottom: -81px;
+      border-radius: 50%;
+      background: #00359b;
+      filter: blur(60px);
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      width: 420px;
+      height: 420px;
+      position: absolute;
+      right: -70px;
+      top: -63px;
+      background: #7f00ff;
+      filter: blur(60px);
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+}
