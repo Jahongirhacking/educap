@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Unbounded";
+  font-weight: 400;
+  src: url("../../../assets/fonts/Unbounded/static/Unbounded-Regular.ttf")
+    format("truetype");
+}
+
+.page__hero {
+  font-family: "Unbounded";
+  width: 100%;
+  background-image: url("../../../assets/images/champions_black_white.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin-top: 75px;
+  overflow: hidden;
+  padding-top: 385px;
+
+  &::before {
+    content: "";
+    z-index: 2;
+    width: 686px;
+    height: 686px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    left: -300px;
+    top: -280px;
+    background: rgba(55, 169, 227, 0.2);
+    filter: blur(60px);
+  }
+
+  &::after {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    width: 686px;
+    height: 686px;
+    right: -300px;
+    bottom: -203px;
+    border-radius: 50%;
+    background: rgba(127, 0, 255, 0.2);
+    filter: blur(60px);
+  }
+
+  .hero__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(2, 1, 19, 0.5);
+    backdrop-filter: blur(4px);
+
+    .hero__content__wrapper {
+      display: flex;
+      flex-direction: column;
+      padding: 53px 0 52px 0;
+      gap: 8px;
+      max-width: 976px;
+
+      .hero__title {
+        font-size: 91px;
+        line-height: 112.84px;
+        font-weight: 700;
+        text-align: center;
+        order: 2;
+      }
+
+      .hero__sponsor {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24.8px;
+        padding: 3px 0 4px 0;
+        text-align: center;
+        background-color: #37a9e3;
+        order: 3;
+      }
+
+      .hero__location,
+      .hero__date {
+        font-size: 25px;
+        color: #37a9e3;
+      }
+
+      .hero__location {
+        order: 1;
+      }
+
+      .hero__date {
+        margin-top: 20px;
+        text-align: right;
+        order: 4;
+      }
+    }
+  }
+}
