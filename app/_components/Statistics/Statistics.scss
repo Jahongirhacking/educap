@@ -29,6 +29,7 @@
       border: 3px solid #7f00ff;
       border-bottom: none;
       flex: none;
+      user-select: none;
 
       &.col-1 {
         @include makeBottomBorderColorful(#8a00f6, #00d1ff, 4px);
@@ -56,6 +57,11 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+        transition: background-color 0.4s ease;
+
+        &:hover {
+          background-color: #7f00ff;
+        }
 
         h2 {
           font-size: 45px;

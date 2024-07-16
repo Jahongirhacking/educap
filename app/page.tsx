@@ -3,7 +3,7 @@
 import { useAppStore } from "@/lib/hooks";
 import { useRef } from "react";
 import { initialize } from "@/lib/features/languageSlice";
-import { Navbar, Hero, Statistics, Goals, Organizers } from "./_components";
+import { Navbar, Hero, Statistics, Goals, Organizers, PrizeFund } from "./_components";
 
 export default function Home() {
   const store = useAppStore()
@@ -20,6 +20,7 @@ export default function Home() {
       <Statistics />
       <Goals />
       <Organizers />
+      <PrizeFund />
     </div>
   );
 }

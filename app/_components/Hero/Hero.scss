@@ -17,6 +17,21 @@
   overflow: hidden;
   padding-top: 385px;
 
+  &:hover {
+    &::before {
+      transform: translate(30px, 30px);
+    }
+
+    &::after {
+      transform: translate(-30px, -30px);
+    }
+  }
+
+  &::before,
+  &::after {
+    transition: transform 0.4s ease;
+  }
+
   &::before {
     content: "";
     z-index: 2;
