@@ -4,6 +4,24 @@
   src: url("../assets/fonts/Exo2/static/Exo2-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Unbounded";
+  font-weight: 400;
+  src: url("../assets/fonts/Unbounded/static/Unbounded-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Archivo";
+  font-weight: 400;
+  src: url("../assets/fonts/Archivo_Black/ArchivoBlack-Regular.ttf")
+    format("truetype");
+}
+
+::selection {
+  background-color: #7f00ff;
+}
+
 .page {
   font-family: "Exo2";
   display: flex;
