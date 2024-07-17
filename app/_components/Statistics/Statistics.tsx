@@ -1,9 +1,13 @@
 import { Card, Col, Row } from "antd";
 import "./Statistics.scss";
+import { navbarAnchor } from "@/utils/staticVariables";
 
 const Statistics = () => {
     return (
-        <section className="page__statistics">
+        <section
+            className="page__statistics"
+            id={navbarAnchor[0].href.slice(1)}
+        >
             <Row gutter={24} className="statistics__row pd-h" wrap>
                 <Col span={8} className="col-1">
                     <Card className="statistics__card">

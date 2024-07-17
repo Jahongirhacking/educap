@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ReactPlayer from "react-player"
-import { navbarAnchor } from "@/utils/staticVariables";
+import ReactPlayer from "react-player";
 import "./Goals.scss";
 
 const Goals = () => {
@@ -29,10 +28,7 @@ const Goals = () => {
     );
 
     return (
-        <section
-            className="page__goals pd-h"
-            id={navbarAnchor[0].href.slice(1)}
-        >
+        <section className="page__goals pd-h" >
             <div className="goals__content">
                 <h2>Цели турнира</h2>
                 <p>

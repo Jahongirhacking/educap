@@ -1,17 +1,5 @@
 @import "../../../styles/globals.scss";
 
-@mixin prizeBgColor() {
-  background: linear-gradient(
-    90deg,
-    #8802f6 0%,
-    #01cfff 31%,
-    #f401b2 63%,
-    #ff2d01 100%
-  );
-  background-size: 170% 170%;
-  animation: prizeAnimation 4s ease infinite;
-}
-
 .page__prize-fund {
   display: flex;
   flex-direction: column;
@@ -54,17 +42,5 @@
         color: transparent;
       }
     }
-  }
-}
-
-@keyframes prizeAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
