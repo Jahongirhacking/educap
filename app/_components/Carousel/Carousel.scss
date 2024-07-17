@@ -66,33 +66,5 @@
         }
       }
     }
-
-    .nav__control {
-      user-select: none;
-      display: flex;
-      align-items: center;
-      column-gap: 75px;
-      row-gap: 10px;
-      font-family: "Unbounded";
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 24.8px;
-      flex-wrap: wrap;
-
-      button {
-        background-color: transparent;
-        color: white;
-        border: none;
-
-        &:hover {
-          background-color: transparent;
-          color: white;
-        }
-
-        span {
-          font-size: 23px;
-        }
-      }
-    }
   }
 }

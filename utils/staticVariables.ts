@@ -1,6 +1,12 @@
 import ILang from "@/types/ILang";
 import { tatuInha, tdiu, webster, westminster } from "@/assets/logos";
 import {
+  gallery1,
+  gallery1Min,
+  gallery2,
+  gallery2Min,
+  gallery3,
+  gallery3Min,
   slider1,
   slider1Min,
   slider2,
@@ -100,5 +106,41 @@ export const carouselPrizeFundImages: ICarouselImage[] = [
   {
     high: slider7,
     low: slider7Min,
+  },
+];
+
+export const carouselGalleryImages: ICarouselImage[] = [
+  {
+    high: gallery1,
+    low: gallery1Min,
+  },
+  {
+    high: gallery2,
+    low: gallery2Min,
+  },
+  {
+    high: gallery3,
+    low: gallery3Min,
+  },
+
+  {
+    high: slider1,
+    low: slider1Min,
+  },
+  {
+    high: slider2,
+    low: slider2Min,
+  },
+  {
+    high: slider3,
+    low: slider3Min,
+  },
+  {
+    high: slider4,
+    low: slider4Min,
+  },
+  {
+    high: slider5,
+    low: slider5Min,
   },
 ];

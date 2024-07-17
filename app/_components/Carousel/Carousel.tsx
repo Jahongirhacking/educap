@@ -1,12 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./Carousel.scss";
 import Image from "next/image";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import ICarouselImage from "@/types/ICarouselImage";
+import CarouselControl from "./CarouselControl/CarouselControl";
 
 const slideTime = 6000;
-const loaderTimeRate = slideTime / 100;
+const loaderTimeRate = slideTime / 101;
 
 const Carousel = ({ images }: { images: ICarouselImage[] }) => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -81,11 +80,12 @@ const Carousel = ({ images }: { images: ICarouselImage[] }) => {
                         </div>
                     ))}
                 </div>
-                <div className="nav__control">
-                    <Button icon={<LeftOutlined />} onClick={showPrevImage} />
-                    {activeIndex + 1} / {images.length}
-                    <Button icon={<RightOutlined />} onClick={showNextImage} />
-                </div>
+                <CarouselControl
+                    imagesLength={images.length}
+                    activeIndex={activeIndex + 1}
+                    showNextImage={showNextImage}
+                    showPrevImage={showPrevImage}
+                />
             </nav>
         </div>
     );

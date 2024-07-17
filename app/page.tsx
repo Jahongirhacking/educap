@@ -3,10 +3,10 @@
 import { useAppStore } from "@/lib/hooks";
 import { useRef } from "react";
 import { initialize } from "@/lib/features/languageSlice";
-import { Navbar, Hero, Statistics, Goals, Organizers, PrizeFund, Winners } from "./_components";
+import { Navbar, Hero, Statistics, Goals, Organizers, PrizeFund, Winners, Gallery } from "./_components";
 import WinnerList from "./_components/Winners/WinnerList";
 import { WinnersDota, WinnersCS } from "./_components/Winners/createWinners"
-import { carouselPrizeFundImages, teamObj1, teamObj2, teamObj3, teamObj4 } from "@/utils/staticVariables";
+import { carouselGalleryImages, carouselPrizeFundImages, teamObj1, teamObj2, teamObj3, teamObj4 } from "@/utils/staticVariables";
 
 export default function Home() {
   const store = useAppStore()
@@ -34,6 +34,7 @@ export default function Home() {
           <WinnersCS />
         </WinnerList>
       </Winners>
+      <Gallery images={carouselGalleryImages} />
     </div>
   );
 }
