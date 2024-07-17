@@ -18,28 +18,6 @@
     format("truetype");
 }
 
-::selection {
-  background-color: #7f00ff;
-  color: white;
-}
-
-::-webkit-scrollbar {
-  background-color: black;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #01cfff;
-}
-
-.page {
-  font-family: "Exo2";
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1366px;
-}
-
 @mixin makeBottomBorderColorful($leftColor, $rightColor, $size) {
   position: relative;
 
@@ -77,4 +55,53 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+@mixin scrollBgColor() {
+  background: linear-gradient(
+    180deg,
+    #8802f6 0%,
+    #01cfff 31%,
+    #f401b2 73%,
+    #ff2d01 100%
+  );
+  background-size: 100% 100%;
+}
+
+@mixin makeBottomBorderPrizeBg() {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 3;
+    @include prizeBgColor();
+  }
+}
+
+::selection {
+  background-color: #7f00ff;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  background-color: black;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  @include scrollBgColor();
+  border-radius: 2px;
+}
+
+.page {
+  font-family: "Exo2";
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1366px;
 }
