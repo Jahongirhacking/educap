@@ -1,3 +1,70 @@
+@import "../../../styles/globals.scss";
+
+@mixin prizeBgColor() {
+  background: linear-gradient(
+    90deg,
+    #8802f6 0%,
+    #01cfff 31%,
+    #f401b2 63%,
+    #ff2d01 100%
+  );
+  background-size: 170% 170%;
+  animation: prizeAnimation 4s ease infinite;
+}
+
 .page__prize-fund {
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  gap: 36px;
+  padding-bottom: 5px;
+
+  .prize__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Unbounded";
+    @include prizeBgColor();
+
+    .prize__info {
+      margin: 3px;
+      background-color: #000;
+      width: 100%;
+      padding-top: 48px;
+      padding-bottom: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+
+      h2 {
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      strong {
+        @include prizeBgColor();
+        font-size: 55px;
+        font-weight: 600;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+}
+
+@keyframes prizeAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -4,3 +4,4 @@ export { default as Statistics } from "./Statistics/Statistics";
 export { default as Goals } from "./Goals/Goals";
 export { default as Organizers } from "./Organizers/Organizers";
 export { default as PrizeFund } from "./PrizeFund/PrizeFund";
+export { default as Carousel } from "./Carousel/Carousel";
