@@ -23,6 +23,15 @@
   color: white;
 }
 
+::-webkit-scrollbar {
+  background-color: black;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #01cfff;
+}
+
 .page {
   font-family: "Exo2";
   display: flex;
@@ -43,5 +52,29 @@
     height: $size;
     background: linear-gradient(90deg, $leftColor, $rightColor);
     z-index: 1;
+  }
+}
+
+@mixin prizeBgColor() {
+  background: linear-gradient(
+    90deg,
+    #8802f6 0%,
+    #01cfff 31%,
+    #f401b2 63%,
+    #ff2d01 100%
+  );
+  background-size: 170% 170%;
+  animation: prizeAnimation 4s ease infinite;
+}
+
+@keyframes prizeAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
