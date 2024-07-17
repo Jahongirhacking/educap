@@ -3,13 +3,17 @@ import "./Organizers.scss";
 import Image from "next/image";
 import { organizer1, organizer2, organizer3 } from "@/assets/logos";
 import { team1, team2, team3, team4 } from "@/assets/images";
+import { navbarAnchor } from "@/utils/staticVariables";
 const runnerText = "ESPORTS EDUCUP";
 
 const Organizers = () => {
     const bannerRunners = new Array(3).fill(runnerText);
 
     return (
-        <section className="page__organizers">
+        <section
+            className="page__organizers"
+            id={navbarAnchor[1].href.slice(1)}
+        >
             <h2>Организаторы</h2>
             <div className="organizers__wrapper">
                 <Row gutter={16} className="pd-h">

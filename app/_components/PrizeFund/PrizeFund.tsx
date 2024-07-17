@@ -1,7 +1,8 @@
+import ICarouselImage from "@/types/ICarouselImage";
 import { Carousel } from "../"
 import "./PrizeFund.scss";
 
-const PrizeFund = () => {
+const PrizeFund = ({ images }: { images: ICarouselImage[] }) => {
     return (
         <section className="page__prize-fund pd-h">
             <div className="prize__wrapper">
@@ -10,7 +11,7 @@ const PrizeFund = () => {
                     <strong>36 000 000 UZS</strong>
                 </div>
             </div>
-            <Carousel />
+            <Carousel images={images} />
         </section>
     )
 }
