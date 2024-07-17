@@ -1,0 +1,41 @@
+.carousel__control {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  column-gap: 75px;
+  row-gap: 10px;
+  font-family: "Unbounded";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24.8px;
+  flex-wrap: wrap;
+
+  button {
+    background-color: transparent !important;
+    color: white !important;
+    border: none;
+    position: relative;
+
+    &:hover {
+      background-color: transparent !important;
+      color: white !important;
+    }
+
+    span.anticon {
+      font-size: 23px !important;
+      transition: transform 0.3s ease;
+    }
+
+    &.prev-btn:active {
+      span {
+        transform: translateX(-5px);
+      }
+    }
+
+    &.next-btn:active {
+      span {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
