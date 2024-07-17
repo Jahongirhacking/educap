@@ -12,10 +12,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: relative;
   margin-top: 75px;
-  overflow: hidden;
   padding-top: 385px;
+  position: relative;
+  overflow: hidden;
 
   &:hover {
     &::before {
