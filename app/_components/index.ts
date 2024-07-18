@@ -7,3 +7,5 @@ export { default as PrizeFund } from "./PrizeFund/PrizeFund";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as Winners } from "./Winners/Winners";
 export { default as Gallery } from "./Gallery/Gallery";
+export { default as Footer } from "./Footer/Footer";
+export { default as Select } from "./Select/Select";

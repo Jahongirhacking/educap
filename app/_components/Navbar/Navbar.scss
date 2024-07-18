@@ -19,6 +19,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: black;
+    gap: 15px;
 
     picture {
       @include makeNavPadding();
@@ -26,6 +27,17 @@
       .logo {
         width: 100px;
         height: 26px;
+      }
+    }
+
+    @media screen and (max-width: 1045px) {
+      .nav__anchors {
+        overflow-y: hidden;
+        overflow-x: auto;
+
+        .ant-anchor {
+          column-gap: 30px;
+        }
       }
     }
 
@@ -62,58 +74,6 @@
         width: 20px;
         height: 20px;
       }
-
-      .ant-select {
-        .ant-select-arrow {
-          color: white;
-          right: -20px;
-        }
-
-        .ant-select-selector {
-          background-color: transparent;
-          box-shadow: none !important;
-          border: none;
-          color: white;
-          padding: 0;
-
-          .ant-select-selection-item {
-            font-size: 16px;
-            font-weight: 600;
-            padding: 0;
-            font-family: "Exo2";
-
-            &:focus {
-              outline: none;
-            }
-          }
-        }
-      }
-
-      .ant-select-open {
-        .ant-select-selection-item {
-          color: white;
-        }
-      }
     }
-  }
-}
-
-.ant-select-dropdown {
-  width: max-content !important;
-  background-color: black;
-
-  .rc-virtual-list-holder-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-  }
-
-  .ant-select-item {
-    color: white;
-    font-family: "Exo2";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
-    min-width: 65px;
   }
 }

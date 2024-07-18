@@ -4,6 +4,7 @@ import ITeam from "@/types/ITeam"
 import { Card, Col, Divider, Row } from "antd";
 import { csLogo, dotaLogo } from "@/assets/logos";
 import { bronzeMedalCS, bronzeMedalDota, goldMedalCS, goldMedalDota, silverMedalCS, silverMedalDota } from "@/assets/icons";
+import React from "react";
 
 type GameType = "cs" | "dota";
 
@@ -50,8 +51,8 @@ const createWinners = ({ gameName }: { gameName: GameType }) => {
                 <div className="card__winners-info">
                     {
                         teams?.map((team, index) => (
-                            <>
-                                <Row key={index}>
+                            <React.Fragment key={index}>
+                                <Row>
                                     <Col className="col__medal">
                                         <Image src={getMedal(index, gameName)} alt="medal image" />
                                     </Col>
@@ -64,7 +65,7 @@ const createWinners = ({ gameName }: { gameName: GameType }) => {
                                     </Col>
                                 </Row>
                                 {index !== teams.length - 1 && <Divider />}
-                            </>
+                            </React.Fragment>
                         ))
                     }
 
