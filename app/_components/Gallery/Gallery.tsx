@@ -2,12 +2,15 @@ import { Image } from "antd";
 import "./Gallery.scss";
 import { useState } from "react";
 import ICarouselImage from "@/types/ICarouselImage";
-import { navbarAnchor } from "@/utils/staticVariables";
 import CarouselControl from "../Carousel/CarouselControl/CarouselControl";
-import clsx from "clsx";
 import GallerySlides from "./GallerySlides";
+import translations from "@/locales/translations";
+import { useAppSelector } from "@/lib/hooks";
 
 const Gallery = ({ images }: { images: ICarouselImage[] }) => {
+    const activeLang = useAppSelector(state => state.languageSlice);
+    const navbarAnchor = translations[activeLang.value].Navbar.anchors;
+
     const [activeIndex, setActiveIndex] = useState(0);
     const [previousIndex, setPreviousIndex] = useState(-1);
     const [isReverse, setReverse] = useState(false);

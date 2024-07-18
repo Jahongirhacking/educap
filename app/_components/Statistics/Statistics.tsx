@@ -1,8 +1,13 @@
 import { Card, Col, Row } from "antd";
 import "./Statistics.scss";
-import { navbarAnchor } from "@/utils/staticVariables";
+import { useAppSelector } from "@/lib/hooks";
+import translations from "@/locales/translations";
 
 const Statistics = () => {
+    const activeLang = useAppSelector(state => state.languageSlice);
+    const statisticsContent = translations[activeLang.value].Statistics;
+    const navbarAnchor = translations[activeLang.value].Navbar.anchors;
+
     return (
         <section
             className="page__statistics"
@@ -12,19 +17,19 @@ const Statistics = () => {
                 <Col span={8} className="col-1">
                     <Card className="statistics__card">
                         <h2>425</h2>
-                        <p>Студентов</p>
+                        <p>{statisticsContent.students}</p>
                     </Card>
                 </Col>
                 <Col span={8} className="col-2">
                     <Card className="statistics__card">
                         <h2>85</h2>
-                        <p>Команд</p>
+                        <p>{statisticsContent.teams}</p>
                     </Card>
                 </Col>
                 <Col span={8} className="col-3">
                     <Card className="statistics__card">
                         <h2>60</h2>
-                        <p>Университетов</p>
+                        <p>{statisticsContent.universities}</p>
                     </Card>
                 </Col>
             </Row>

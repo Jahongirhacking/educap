@@ -3,10 +3,14 @@ import "./Organizers.scss";
 import Image from "next/image";
 import { organizer1, organizer2, organizer3 } from "@/assets/logos";
 import { team1, team2, team3, team4 } from "@/assets/images";
-import { navbarAnchor } from "@/utils/staticVariables";
+import translations from "@/locales/translations";
+import { useAppSelector } from "@/lib/hooks";
 const runnerText = "ESPORTS EDUCUP";
 
 const Organizers = () => {
+    const activeLang = useAppSelector(state => state.languageSlice);
+    const organizersContent = translations[activeLang.value].Organizers;
+    const navbarAnchor = translations[activeLang.value].Navbar.anchors;
     const bannerRunners = new Array(3).fill(runnerText);
 
     return (
@@ -14,7 +18,7 @@ const Organizers = () => {
             className="page__organizers"
             id={navbarAnchor[1].href.slice(1)}
         >
-            <h2>Организаторы</h2>
+            <h2>{organizersContent.title}</h2>
             <div className="organizers__wrapper">
                 <Row gutter={16} className="pd-h">
                     <Col span={8}>
@@ -44,19 +48,19 @@ const Organizers = () => {
                     <div className="media__grid grid-left">
                         <div className="media__card">
                             <Image src={team1} alt="team image" width={276} />
-                            <p>Организаторы обучали студентов работе на киберспортивной платформе Faceit, помогали создавать команды и регистрироваться на чемпионаты, включая их собственный турнир.</p>
+                            <p>{organizersContent.paragraphs[0]}</p>
                         </div>
 
                         <div className="media__card">
                             <Image src={team3} alt="team image" width={476} />
-                            <p>На киберсцене было десять компьютеров, а трансляции на YouTube набрали более 4 000 просмотров. Победители получили денежные призы, медали и кубки.</p>
+                            <p>{organizersContent.paragraphs[1]}</p>
                         </div>
                     </div>
 
                     <div className="media__grid grid-right">
                         <div className="media__card">
                             <Image src={team2} alt="team image" width={576} />
-                            <p>Финал турнира прошел 23 мая в Министерстве Высшего Образования, Науки и Инноваций, с русскоязычными и узбекоязычными комментаторами. </p>
+                            <p>{organizersContent.paragraphs[2]}</p>
                         </div>
 
                         <div className="media__card">

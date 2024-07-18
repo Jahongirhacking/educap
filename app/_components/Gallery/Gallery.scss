@@ -124,14 +124,20 @@
         flex-wrap: wrap;
         gap: 23px;
 
+        @media screen and (max-width: 700px) {
+          .ant-image {
+            width: calc(50% - 13px);
+          }
+        }
+
         img {
           width: 277px;
           height: 189px;
           object-fit: cover;
 
           @media screen and (max-width: 700px) {
-            width: 184.66px;
-            height: 126px;
+            width: 100%;
+            height: auto;
           }
         }
       }

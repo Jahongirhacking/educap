@@ -114,6 +114,11 @@
           column-gap: 20px;
           row-gap: 30px;
 
+          @media screen and (max-width: 550px) {
+            flex-direction: column;
+            text-align: center;
+          }
+
           .col__medal {
             img {
               width: 76px;

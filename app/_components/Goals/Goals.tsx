@@ -3,8 +3,12 @@
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import "./Goals.scss";
+import { useAppSelector } from "@/lib/hooks";
+import translations from "@/locales/translations";
 
 const Goals = () => {
+    const activeLang = useAppSelector(state => state.languageSlice);
+    const goalsContent = translations[activeLang.value].Goals;
     const [isHoverVideo, setIsHoverVideo] = useState(false);
     const [isClient, setIsClient] = useState(false);
 
@@ -30,11 +34,9 @@ const Goals = () => {
     return (
         <section className="page__goals pd-h" >
             <div className="goals__content">
-                <h2>Цели турнира</h2>
+                <h2>{goalsContent.title}</h2>
                 <p>
-                    Основная цель турнира была популяризация киберспорта и обучение студентов
-                    работе на инфосистемах. Организаторы научили студентов работать на
-                    инфосистемах и проводить масштабные турниры в будущем.
+                    {goalsContent.paragraph}
                 </p>
             </div>
             <div className="player__wrapper">

@@ -5,6 +5,7 @@ import { Card, Col, Divider, Row } from "antd";
 import { csLogo, dotaLogo } from "@/assets/logos";
 import { bronzeMedalCS, bronzeMedalDota, goldMedalCS, goldMedalDota, silverMedalCS, silverMedalDota } from "@/assets/icons";
 import React from "react";
+import translations from "@/locales/translations";
 
 type GameType = "cs" | "dota";
 
@@ -14,7 +15,9 @@ interface TeamProps {
 
 const createWinners = ({ gameName }: { gameName: GameType }) => {
     const Winners = ({ [`${gameName}Teams`]: teams }: TeamProps) => {
-        const lang = useAppSelector(state => state.languageSlice.value);
+        const activeLang = useAppSelector(state => state.languageSlice);
+        const winnerContent = translations[activeLang.value].Winners;
+        const lang = activeLang.value;
 
         const addQuote = (str: string) => {
             return `«${str}»`;
@@ -57,8 +60,8 @@ const createWinners = ({ gameName }: { gameName: GameType }) => {
                                         <Image src={getMedal(index, gameName)} alt="medal image" />
                                     </Col>
                                     <Col className="col__team-info">
-                                        <h3>Команда {toNormalArray(team.name).map(name => addQuote(name)).join(connectionWord)}</h3>
-                                        <p>Представители {toNormalArray(team.university).join(connectionWord)}</p>
+                                        <h3>{winnerContent.team} {toNormalArray(team.name).map(name => addQuote(name)).join(connectionWord)}</h3>
+                                        <p>{winnerContent.representatives} {toNormalArray(team.university).join(connectionWord)}</p>
                                     </Col>
                                     <Col className="col__team-image">
                                         <Image src={team.logo} alt="team image" />

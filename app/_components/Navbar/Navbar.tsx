@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import { Anchor } from 'antd';
-import { languageSelect, navbarAnchor } from '@/utils/staticVariables';
+import { languageSelect } from '@/utils/staticVariables';
 import { esportsLogo } from "@/assets/logos";
 import EarthIcon from "@/assets/icons/earth.png";
-import { useAppDispatch, useAppSelector, useAppStore } from '@/lib/hooks';
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { onChange } from '@/lib/features/languageSlice';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import { useState } from 'react';
@@ -13,6 +13,7 @@ import "./Navbar.scss";
 import { Select } from '..';
 import ILang from '@/types/ILang';
 import IOption from '@/types/IOption';
+import translations from '@/locales/translations';
 
 const Navbar = () => {
     const dispatch = useAppDispatch();
@@ -33,7 +34,7 @@ const Navbar = () => {
                 <div className='nav__anchors'>
                     <Anchor
                         direction="horizontal"
-                        items={navbarAnchor}
+                        items={translations[activeLang.value].Navbar.anchors}
                     />
                 </div>
 

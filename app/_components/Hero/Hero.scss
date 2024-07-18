@@ -8,7 +8,7 @@
 .page__hero {
   font-family: "Unbounded";
   width: 100%;
-  background-image: url("../../../assets/images/champions_black_white.jpg");
+  background-image: url("/champions_black_white.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -68,6 +68,8 @@
     align-items: center;
     background: rgba(2, 1, 19, 0.5);
     backdrop-filter: blur(4px);
+    position: relative;
+    z-index: 3;
 
     .hero__content__wrapper {
       display: flex;
@@ -88,7 +90,7 @@
         font-size: 20px;
         font-weight: 500;
         line-height: 24.8px;
-        padding: 3px 0 4px 0;
+        padding: 3px 5px 4px 5px;
         text-align: center;
         background-color: #37a9e3;
         order: 3;
@@ -108,6 +110,22 @@
         margin-top: 20px;
         text-align: right;
         order: 4;
+      }
+
+      @media screen and (max-width: 550px) {
+        .hero__title {
+          font-size: 60.6px;
+          line-height: 75.22px;
+        }
+
+        .hero__sponsor {
+          font-size: 13.3px;
+        }
+
+        .hero__location,
+        .hero__date {
+          font-size: 16.6px;
+        }
       }
     }
   }
