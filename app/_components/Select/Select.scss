@@ -1,0 +1,72 @@
+@import "../../../styles/globals.scss";
+
+.custom-select {
+  font-family: "Exo2";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  position: relative;
+
+  .select__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .prefix-icon {
+      width: 20px;
+      height: auto;
+    }
+
+    .select {
+      .dropdown-wrapper {
+        position: absolute;
+        top: 70px;
+        width: calc(100% + 50px);
+        right: -50px;
+        background-color: black;
+        color: white;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition:
+          max-height 0.8s linear,
+          padding-top 0.8s linear,
+          padding-bottom 0.8s linear;
+        overflow: hidden;
+
+        &.isActive {
+          max-height: 300px;
+          padding-top: 10px;
+          padding-bottom: 30px;
+        }
+
+        .dropdown-list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          row-gap: 20px;
+          cursor: auto;
+          text-align: center;
+
+          li {
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: color 0.4s ease;
+
+            &:hover {
+              color: #37a9e3;
+            }
+
+            span {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
