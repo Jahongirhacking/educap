@@ -1,19 +1,23 @@
 "use client";
 
 import Image from 'next/image';
-import { Anchor, Select } from 'antd';
+import { Anchor } from 'antd';
 import { languageSelect, navbarAnchor } from '@/utils/staticVariables';
-import "./Navbar.scss";
-import EsportsLogo from "@/assets/logos/esports_logo.png";
+import { esportsLogo } from "@/assets/logos";
 import EarthIcon from "@/assets/icons/earth.png";
-import { useRef } from 'react';
 import { useAppDispatch, useAppSelector, useAppStore } from '@/lib/hooks';
-import { initialize, onChange } from '@/lib/features/languageSlice';
-import { DownOutlined } from '@ant-design/icons';
+import { onChange } from '@/lib/features/languageSlice';
+import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import "./Navbar.scss";
+import { Select } from '..';
+import ILang from '@/types/ILang';
+import IOption from '@/types/IOption';
 
 const Navbar = () => {
     const dispatch = useAppDispatch();
     const activeLang = useAppSelector(state => state.languageSlice);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className='fixed-container'>
@@ -21,33 +25,37 @@ const Navbar = () => {
                 <picture>
                     <Image
                         className='logo'
-                        src={EsportsLogo}
+                        src={esportsLogo}
                         alt="esports logo image"
                     />
                 </picture>
-                <Anchor
-                    direction="horizontal"
-                    items={navbarAnchor}
-                />
-                <label
+
+                <div className='nav__anchors'>
+                    <Anchor
+                        direction="horizontal"
+                        items={navbarAnchor}
+                    />
+                </div>
+
+                <Select
                     className="language-select"
-                    htmlFor='language-select'
-                >
-                    <Image
-                        src={EarthIcon}
-                        alt='Earth icon image'
-                        className='select__icon'
-                    />
-                    <Select
-                        labelInValue
-                        suffixIcon={<DownOutlined />}
-                        id='language-select'
-                        onChange={(selected) => dispatch(onChange(selected))}
-                        value={activeLang}
-                        options={languageSelect.filter(el => el.value !== activeLang.value)}
-                        dropdownAlign={{ offset: [-16, 21] }}
-                    />
-                </label>
+                    onChange={(selected) => { dispatch(onChange(selected as ILang)) }}
+                    value={activeLang}
+                    filterSort={(el: IOption) => el.value !== activeLang.value}
+                    options={languageSelect}
+                    controlOpen={[isOpen, setIsOpen]}
+                    suffixIcon={isOpen
+                        ? <UpOutlined />
+                        : <DownOutlined />
+                    }
+                    prefixIcon={
+                        <Image
+                            src={EarthIcon}
+                            alt='Earth icon image'
+                            className='select__icon'
+                        />
+                    }
+                />
             </nav>
         </div>
     )

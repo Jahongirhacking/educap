@@ -9,6 +9,18 @@
   padding-top: 101px;
   padding-bottom: 113px;
 
+  @media screen and (max-width: 1145px) {
+    flex-direction: column;
+
+    .goals__content {
+      order: 2;
+    }
+
+    .player__wrapper {
+      order: 1;
+    }
+  }
+
   .goals__content {
     display: flex;
     flex-direction: column;

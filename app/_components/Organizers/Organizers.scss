@@ -33,6 +33,7 @@
 
     .ant-row {
       width: 100%;
+      gap: 50px;
       flex-wrap: wrap;
       justify-content: space-around;
       align-items: center;
@@ -42,12 +43,13 @@
       .ant-col {
         text-align: center;
         flex: none;
+        width: 98%;
         max-width: 176px;
         position: relative;
 
         img {
-          width: 176px;
-          height: 176px;
+          width: 100%;
+          height: auto;
           transition: transform 0.4s ease;
 
           &:hover {
@@ -86,6 +88,15 @@
       justify-content: space-between;
       align-items: stretch;
 
+      @media screen and (max-width: 1200px) {
+        flex-direction: column;
+
+        .media__card {
+          text-align: center !important;
+          align-items: center !important;
+        }
+      }
+
       .media__grid {
         display: flex;
         flex-direction: column;
@@ -98,8 +109,12 @@
         }
 
         &.grid-right {
-          align-items: flex-end;
+          // align-items: flex-end;
           text-align: right;
+
+          .media__card {
+            align-items: flex-end;
+          }
         }
 
         .media__card {

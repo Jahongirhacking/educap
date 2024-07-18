@@ -57,17 +57,6 @@
   }
 }
 
-@mixin scrollBgColor() {
-  background: linear-gradient(
-    180deg,
-    #8802f6 0%,
-    #01cfff 31%,
-    #f401b2 73%,
-    #ff2d01 100%
-  );
-  background-size: 100% 100%;
-}
-
 @mixin makeBottomBorderPrizeBg() {
   position: relative;
 
@@ -94,7 +83,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @include scrollBgColor();
+  background-color: #37a9e3;
   border-radius: 2px;
 }
 
