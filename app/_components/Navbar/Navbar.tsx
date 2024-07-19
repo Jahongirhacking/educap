@@ -64,7 +64,11 @@ const Navbar = ({ showMenuBtn = true, className, anchorDirection = "horizontal",
                 }
             />
 
-            {showMenuBtn && <NavDrawerBtn />}
+            {showMenuBtn &&
+                <div className='drawer-btn__wrapper'>
+                    <NavDrawerBtn />
+                </div>
+            }
         </nav>
     )
 }
