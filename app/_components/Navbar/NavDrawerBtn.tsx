@@ -24,7 +24,7 @@ const NavDrawerBtn = () => {
 
             <Drawer
                 placement="left"
-                closable={false}
+                closable={true}
                 open={isDrawerOpen}
                 onClose={closeDrawer}
             >
