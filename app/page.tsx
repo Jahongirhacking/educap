@@ -32,7 +32,10 @@ export default function Home() {
           </div>
         )
       }
-      <Navbar />
+
+      <div className='fixed-container'>
+        <Navbar className="page__nav" />
+      </div>
       <Hero />
       <Statistics />
       <Goals />
