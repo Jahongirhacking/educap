@@ -14,20 +14,21 @@ Welcome to the Educap Tournament web application. This project is built with Nex
 
 ## Project Structure
 
+```bash
 educap/
 ├── app/
-│ └── \_components/
-| ├── Carousel/
-│ ├── Footer/
-│ ├── Gallery/
-│ ├── Goals/
-│ ├── Hero/
-│ ├── Navbar/
-│ ├── Organizers/
-│ ├── PrizeFund/
-│ ├── Select/
-│ ├── Statistics/
-│ └── Winners/
+│ └── _components/
+│   ├── Carousel/
+│   ├── Footer/
+│   ├── Gallery/
+│   ├── Goals/
+│   ├── Hero/
+│   ├── Navbar/
+│   ├── Organizers/
+│   ├── PrizeFund/
+│   ├── Select/
+│   ├── Statistics/
+│   └── Winners/
 ├── assets/
 │ ├── fonts/
 │ ├── icons/
@@ -42,6 +43,7 @@ educap/
 ├── types/
 ├── utils/
 └── README.md
+```
 
 ## Getting Started
 
