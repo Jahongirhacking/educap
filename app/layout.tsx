@@ -3,16 +3,19 @@ import "@/styles/normalize.scss";
 import "@/styles/globals.scss";
 import StoreProvider from "./StoreProvider";
 import Head from "next/head";
+import logo from "@/assets/logos/esports_logo.png";
 
 export const metadata: Metadata = {
   title: "Educap Tournament",
   description: "Турнир Министерства высшего образования, науки и инноваций",
+  metadataBase: new URL('https://educap-uz.netlify.app/'),
   openGraph: {
     title: "Educap Tournament",
     description: "Турнир Министерства высшего образования, науки и инноваций",
+    url: 'https://educap-uz.netlify.app/',
     images: [
       {
-        url: "/esports_logo.png",
+        url: logo.src,
         alt: "Educap Tournament",
       },
     ],
