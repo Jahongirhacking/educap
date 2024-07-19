@@ -14,51 +14,58 @@ import { Select } from '..';
 import ILang from '@/types/ILang';
 import IOption from '@/types/IOption';
 import translations from '@/locales/translations';
+import NavDrawerBtn from './NavDrawerBtn';
 
-const Navbar = () => {
+const Navbar = ({ showMenuBtn = true, className, anchorDirection = "horizontal", onClickAnchor = () => { } }: {
+    showMenuBtn?: boolean,
+    className?: string,
+    anchorDirection?: "horizontal" | "vertical",
+    onClickAnchor?: () => void,
+}) => {
     const dispatch = useAppDispatch();
     const activeLang = useAppSelector(state => state.languageSlice);
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className='fixed-container'>
-            <nav className='nav page__nav pd-h'>
-                <picture>
-                    <Image
-                        className='logo'
-                        src={esportsLogo}
-                        alt="esports logo image"
-                    />
-                </picture>
-
-                <div className='nav__anchors'>
-                    <Anchor
-                        direction="horizontal"
-                        items={translations[activeLang.value].Navbar.anchors}
-                    />
-                </div>
-
-                <Select
-                    className="language-select"
-                    onChange={(selected) => { dispatch(onChange(selected as ILang)) }}
-                    value={activeLang}
-                    filterSort={(el: IOption) => el.value !== activeLang.value}
-                    options={languageSelect}
-                    controlOpen={[isOpen, setIsOpen]}
-                    suffixIcon={isOpen
-                        ? <UpOutlined />
-                        : <DownOutlined />
-                    }
-                    prefixIcon={
-                        <Image
-                            src={EarthIcon}
-                            alt='Earth icon image'
-                            className='select__icon'
-                        />
-                    }
+        <nav className={`nav pd-h ${className}`}>
+            <picture>
+                <Image
+                    className='logo'
+                    src={esportsLogo}
+                    alt="esports logo image"
                 />
-            </nav>
-        </div>
+            </picture>
+
+            <div className='nav__anchors'>
+                <Anchor
+                    direction={anchorDirection}
+                    items={translations[activeLang.value].Navbar.anchors}
+                    onClick={onClickAnchor}
+                />
+            </div>
+
+            <Select
+                className="language-select"
+                onChange={(selected) => { dispatch(onChange(selected as ILang)) }}
+                value={activeLang}
+                filterSort={(el: IOption) => el.value !== activeLang.value}
+                options={languageSelect}
+                controlOpen={[isOpen, setIsOpen]}
+                suffixIcon={isOpen
+                    ? <UpOutlined />
+                    : <DownOutlined />
+                }
+                prefixIcon={
+                    <Image
+                        src={EarthIcon}
+                        alt='Earth icon image'
+                        className='select__icon'
+                    />
+                }
+            />
+
+            {showMenuBtn && <NavDrawerBtn />}
+        </nav>
     )
 }
 
