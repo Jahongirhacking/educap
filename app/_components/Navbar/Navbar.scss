@@ -69,25 +69,25 @@
       display: none;
     }
 
-    @media screen and (max-width: "700px") {
-      padding-top: 18px;
-    }
-
     .select__icon {
       width: 20px;
       height: 20px;
     }
   }
 
-  .nav__drawer-btn {
-    display: none;
-    background-color: transparent !important;
-    color: white !important;
-    border-color: white !important;
-    border-radius: 4px;
+  .drawer-btn__wrapper {
+    @include makeNavPadding();
 
-    @media screen and (max-width: "700px") {
-      display: block;
+    .nav__drawer-btn {
+      display: none;
+      background-color: transparent !important;
+      color: white !important;
+      border-color: white !important;
+      border-radius: 4px;
+
+      @media screen and (max-width: "700px") {
+        display: block;
+      }
     }
   }
 }
@@ -95,7 +95,8 @@
 // Navbar inside the Ant-Drawer
 .ant-drawer {
   .ant-drawer-content {
-    background-color: black;
+    background-color: #000000d1;
+    backdrop-filter: blur(12px);
 
     .ant-drawer-header {
       .anticon {
