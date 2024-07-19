@@ -99,13 +99,17 @@
     backdrop-filter: blur(12px);
 
     .ant-drawer-header {
-      .anticon {
-        color: white;
+      .ant-drawer-close {
+        margin: auto;
+
+        .anticon {
+          color: white;
+        }
       }
     }
 
     .ant-drawer-body {
-      padding-top: 40px;
+      padding-top: 10px;
       padding-bottom: 150px;
 
       .drawer__nav {
