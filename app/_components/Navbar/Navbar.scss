@@ -107,6 +107,7 @@
     .ant-drawer-body {
       padding-top: 40px;
       padding-bottom: 150px;
+
       .drawer__nav {
         display: flex;
         flex-direction: column;
@@ -159,6 +160,7 @@
             right: auto;
             left: 0;
             width: 100%;
+            background-color: transparent;
 
             .dropdown-list {
               text-align: left;
