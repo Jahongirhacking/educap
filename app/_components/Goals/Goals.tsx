@@ -45,7 +45,7 @@ const Goals = () => {
                     <ReactPlayer
                         width="100%"
                         height="100%"
-                        url={"https://www.youtube.com/watch?v=tIoq9rmxnR8"}
+                        url={"https://youtu.be/3ZuSKhnu1P0?si=RCTUQTVBPp1e32I6"}
                         playIcon={<PlaybackButton />}
                         light={"/champions.jpg"}
                         controls
