@@ -1,10 +1,10 @@
-import ICarouselImage from "@/types/ICarouselImage";
+import { StaticImageData } from "next/image";
 import { Carousel } from "../"
 import "./PrizeFund.scss";
 import { useAppSelector } from "@/lib/hooks";
 import translations from "@/locales/translations";
 
-const PrizeFund = ({ images }: { images: ICarouselImage[] }) => {
+const PrizeFund = ({ images }: { images: StaticImageData[] }) => {
     const activeLang = useAppSelector(state => state.languageSlice);
     const prizeFundContent = translations[activeLang.value].PrizeFund;
 
