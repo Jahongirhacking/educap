@@ -30,13 +30,13 @@
         padding-top: 0;
         padding-bottom: 0;
         transition:
-          max-height 0.8s linear,
-          padding-top 0.8s linear,
-          padding-bottom 0.8s linear;
+          max-height 0.4s linear,
+          padding-top 0.4s linear,
+          padding-bottom 0.4s linear;
         overflow: hidden;
 
         &.isActive {
-          max-height: 300px;
+          max-height: 150px;
           padding-top: 10px;
           padding-bottom: 30px;
         }

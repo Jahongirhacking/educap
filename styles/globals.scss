@@ -18,15 +18,13 @@
     format("truetype");
 }
 
-@mixin makeBottomBorderColorful($leftColor, $rightColor, $size) {
-  position: relative;
-
+@mixin makeBottomBorderColorful($leftColor, $rightColor, $size, $borderSize) {
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: -$borderSize;
+    right: -$borderSize;
     height: $size;
     background: linear-gradient(90deg, $leftColor, $rightColor);
     z-index: 1;
@@ -58,8 +56,6 @@
 }
 
 @mixin makeBottomBorderPrizeBg() {
-  position: relative;
-
   &::after {
     content: "";
     position: absolute;
@@ -107,5 +103,40 @@
     z-index: 100;
     display: flex;
     justify-content: center;
+  }
+}
+
+img {
+  &.show-img {
+    animation: showImageAnimation 2s ease;
+  }
+  &.hide-img {
+    animation: hideImageAnimation 2s ease;
+  }
+}
+
+@keyframes showImageAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideImageAnimation {
+  0% {
+    opacity: 1;
+    @keyframes showImageAnimation {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  100% {
+    opacity: 0;
   }
 }

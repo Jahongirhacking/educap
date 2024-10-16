@@ -30,17 +30,18 @@
       border-bottom: none;
       flex: none;
       user-select: none;
+      position: relative;
 
       &.col-1 {
-        @include makeBottomBorderColorful(#8a00f6, #00d1ff, 4px);
+        @include makeBottomBorderColorful(#8a00f6, #00d1ff, 4px, 3px);
       }
 
       &.col-2 {
-        @include makeBottomBorderColorful(#00d1ff, #f600b1, 4px);
+        @include makeBottomBorderColorful(#00d1ff, #f600b1, 4px, 3px);
       }
 
       &.col-3 {
-        @include makeBottomBorderColorful(#f600b1, #ff2e00, 4px);
+        @include makeBottomBorderColorful(#f600b1, #ff2e00, 4px, 3px);
       }
 
       .statistics__card {
@@ -51,7 +52,7 @@
         background-color: black;
         color: white;
         text-align: center;
-        padding: 30px 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;

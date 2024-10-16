@@ -52,6 +52,11 @@
       line-height: 20px;
       font-weight: 600;
       font-family: "Exo2";
+      transition: 0.4s ease color;
+
+      &:hover {
+        color: #7f00ff !important;
+      }
     }
   }
 
@@ -76,18 +81,18 @@
   }
 
   .drawer-btn__wrapper {
+    display: none;
     @include makeNavPadding();
 
+    @media screen and (max-width: "700px") {
+      display: block;
+    }
+
     .nav__drawer-btn {
-      display: none;
       background-color: transparent !important;
       color: white !important;
       border-color: white !important;
       border-radius: 4px;
-
-      @media screen and (max-width: "700px") {
-        display: block;
-      }
     }
   }
 }
@@ -178,5 +183,11 @@
         }
       }
     }
+  }
+}
+
+.select__wrapper {
+  .anticon-down {
+    transition: transform 0.4s ease;
   }
 }

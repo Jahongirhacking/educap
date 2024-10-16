@@ -110,7 +110,7 @@
 
         &.grid-right {
           // align-items: flex-end;
-          text-align: right;
+          text-align: left;
 
           .media__card {
             align-items: flex-end;
@@ -142,11 +142,12 @@
           &::before {
             width: 284px;
             height: 284px;
-            right: 33px;
+            left: 83px;
             top: -84px;
             background: #00359b;
             border-radius: 50%;
             filter: blur(60px);
+            animation: scaleOut 7s ease infinite;
           }
 
           &::after {
@@ -159,6 +160,7 @@
             background: #7f00ff;
             border-radius: 50%;
             filter: blur(60px);
+            animation: scaleIn 7s ease infinite;
           }
 
           img {
@@ -177,5 +179,29 @@
         }
       }
     }
+  }
+}
+
+@keyframes scaleOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
   }
 }

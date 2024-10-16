@@ -1,0 +1,96 @@
+.gallery__carousel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-width: 100%;
+  overflow: hidden;
+
+  &.small-gallery-1,
+  &.small-gallery-2 {
+    flex: 1;
+    min-width: calc(50% - 11px);
+    max-width: calc(50% - 11px);
+  }
+
+  .carousel-slide {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    transform: translate3d(100%, 0, 0);
+
+    background-size: cover;
+    background-position: center;
+
+    &.active {
+      z-index: 3;
+      transition: transform 1.25s ease;
+      transform: translate3d(0, 0, 0);
+      animation: activeIn 1.25s ease;
+    }
+
+    &.previous {
+      z-index: 2;
+      transition: transform 1.25s ease;
+      animation: previousOut 1.25s ease;
+    }
+  }
+
+  &.reverse {
+    .carousel-slide {
+      &.active {
+        z-index: 2;
+        transition: transform 1.25s ease;
+        transform: translate3d(0, 0, 0);
+        animation: previousOutReverse 1.25s ease;
+      }
+
+      &.previous {
+        z-index: 3;
+        transition: transform 1.25s ease;
+        animation: activeInReverse 1.25s ease;
+      }
+    }
+  }
+}
+
+@keyframes activeIn {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes previousOut {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes activeInReverse {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes previousOutReverse {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

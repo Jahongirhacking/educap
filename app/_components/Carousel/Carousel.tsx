@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./Carousel.scss";
-import Image from "next/image";
-import ICarouselImage from "@/types/ICarouselImage";
+import Image, { StaticImageData } from "next/image";
 import CarouselControl from "./CarouselControl/CarouselControl";
 
-const slideTime = 6000;
+const slideTime = 8000;
 const loaderTimeRate = slideTime / 101;
 
-const Carousel = ({ images }: { images: ICarouselImage[] }) => {
+const Carousel = ({ images }: { images: StaticImageData[] }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [loaderTime, setLoaderTime] = useState(0);
+    const [clsName, setClsName] = useState('');
 
     const slideIntervalId = useRef<NodeJS.Timeout | null>(null);
     const loaderIntervalId = useRef<NodeJS.Timeout | null>(null);
@@ -36,7 +36,12 @@ const Carousel = ({ images }: { images: ICarouselImage[] }) => {
             }
             setLoaderTime(0);
             loaderIntervalId.current = setInterval(() => {
-                setLoaderTime((prev) => Math.min(prev + 1, 100));
+                setLoaderTime((prev) => {
+                    if (prev < 15) setClsName('show-img');
+                    else if (prev >= 75) setClsName('hide-img');
+                    else setClsName('');
+                    return Math.min(prev + 1, 100)
+                });
             }, loaderTimeRate);
         };
 
@@ -57,9 +62,11 @@ const Carousel = ({ images }: { images: ICarouselImage[] }) => {
         <div className="carousel__wrapper">
             <div className="carousel__main-image">
                 <Image
-                    src={images[activeIndex].high}
-                    blurDataURL={images[activeIndex].low.src}
-                    alt="main image" />
+                    className={clsName}
+                    src={images[activeIndex]}
+                    blurDataURL={images[activeIndex].src}
+                    alt="main image"
+                />
                 <span className="carousel__loader" style={{ width: `${loaderTime}%` }} />
             </div>
             <nav className="carousel__nav">
@@ -72,8 +79,8 @@ const Carousel = ({ images }: { images: ICarouselImage[] }) => {
                             <Image
                                 width={73}
                                 height={46}
-                                src={img.high}
-                                blurDataURL={img.low.src}
+                                src={img}
+                                blurDataURL={img.src}
                                 onClick={() => setActiveIndex(index)}
                                 alt="nav image"
                             />

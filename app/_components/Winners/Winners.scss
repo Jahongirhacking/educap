@@ -41,14 +41,14 @@
         background: #00359b;
         right: 0;
         top: -15px;
-        animation: blueMoveToLeft 8s ease infinite;
+        animation: scaleOut 7s ease infinite;
       }
 
       &::before {
         background: #7f00ff;
         right: -106px;
         bottom: 40px;
-        animation: pinkMoveToLeft 10s ease infinite;
+        animation: scaleIn 7s ease infinite;
       }
     }
 
@@ -57,14 +57,14 @@
         background: #7f00ff;
         left: 0;
         top: -15px;
-        animation: blueMoveToRight 7s ease infinite;
+        animation: scaleOut 7s ease infinite;
       }
 
       &::before {
         background: #00359b;
         left: -106px;
         bottom: 40px;
-        animation: pinkMoveToRight 9s ease infinite;
+        animation: scaleIn 7s ease infinite;
       }
     }
 
@@ -90,6 +90,7 @@
         background-image: url("/cup.png");
         background-position: center;
         background-repeat: no-repeat;
+        position: relative;
         @include makeBottomBorderPrizeBg();
 
         .game-image {
@@ -166,50 +167,26 @@
   }
 }
 
-@keyframes blueMoveToLeft {
+@keyframes scaleOut {
   0% {
-    transform: translate(0px, 0px);
+    transform: scale(1);
   }
   50% {
-    transform: translate(-150%, 200px);
+    transform: scale(1.3);
   }
   100% {
-    transform: translate(0px, 0px);
+    transform: scale(1);
   }
 }
 
-@keyframes blueMoveToRight {
+@keyframes scaleIn {
   0% {
-    transform: translate(0px, 0px);
+    transform: scale(1);
   }
   50% {
-    transform: translate(150%, 200px);
+    transform: scale(0.7);
   }
   100% {
-    transform: translate(0px, 0px);
-  }
-}
-
-@keyframes pinkMoveToLeft {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(-240%, -100px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-
-@keyframes pinkMoveToRight {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(240%, -100px);
-  }
-  100% {
-    transform: translate(0px, 0px);
+    transform: scale(1);
   }
 }

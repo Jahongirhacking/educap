@@ -1,26 +1,29 @@
-import ICarouselImage from "@/types/ICarouselImage";
+import { Image } from "antd";
 import clsx from "clsx";
+import { StaticImageData } from "next/image";
+import './GallerySlides.scss';
 
-const GallerySlides = ({ images, isReverse, activeIndex, previousIndex }: {
-    images: ICarouselImage[],
+const GallerySlides = ({ images, isReverse, activeIndex, previousIndex, className }: {
+    images: StaticImageData[],
     isReverse: boolean,
     activeIndex: number,
     previousIndex: number
+    className?: string
 }) => {
 
-    const className = clsx("gallery__carousel", {
+    const clsName = clsx("gallery__carousel", {
         reverse: isReverse
     });
 
     return (
-        <div className={className}>
+        <div className={`${clsName} ${className}`}>
             {
                 images.map((image, index) => (
                     <CarouselSlide
                         isActive={activeIndex === index}
                         isPrevious={previousIndex === index}
                         key={index}
-                        url={image.high.src}
+                        url={image.src}
                     />
                 ))
             }
@@ -44,7 +47,9 @@ const CarouselSlide: React.FC<CarouselSlideProps> = props => {
     });
 
     return (
-        <div className={className} style={{ backgroundImage: `url(${url})` }} />
+        <div className={className} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Image alt="slider image" src={url} preview={{ src: url }}></Image>
+        </div>
     );
 };
 

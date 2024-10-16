@@ -51,9 +51,8 @@ const Navbar = ({ showMenuBtn = true, className, anchorDirection = "horizontal",
                 filterSort={(el: IOption) => el.value !== activeLang.value}
                 options={languageSelect}
                 controlOpen={[isOpen, setIsOpen]}
-                suffixIcon={isOpen
-                    ? <UpOutlined />
-                    : <DownOutlined />
+                suffixIcon={
+                    <DownOutlined className='lang-btn' style={{ transform: isOpen ? 'rotateX(180deg)' : 'rotateX(0deg)' }} />
                 }
                 prefixIcon={
                     <Image

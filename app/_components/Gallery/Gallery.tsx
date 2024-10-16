@@ -1,13 +1,13 @@
 import { Image } from "antd";
 import "./Gallery.scss";
 import { useState } from "react";
-import ICarouselImage from "@/types/ICarouselImage";
 import CarouselControl from "../Carousel/CarouselControl/CarouselControl";
 import GallerySlides from "./GallerySlides";
 import translations from "@/locales/translations";
 import { useAppSelector } from "@/lib/hooks";
+import { StaticImageData } from "next/image";
 
-const Gallery = ({ images }: { images: ICarouselImage[] }) => {
+const Gallery = ({ images }: { images: StaticImageData[] }) => {
     const activeLang = useAppSelector(state => state.languageSlice);
     const navbarAnchor = translations[activeLang.value].Navbar.anchors;
 
@@ -41,32 +41,24 @@ const Gallery = ({ images }: { images: ICarouselImage[] }) => {
                         isReverse={isReverse}
                         activeIndex={activeIndex}
                         previousIndex={previousIndex}
+                        className="big-gallery"
                     />
                 </div>
                 <div className="gallery__nav">
                     <div className="gallery__images">
-                        <Image
-                            src={images[(activeIndex + 1) % images.length].high.src}
-                            alt="gallery image"
-                            placeholder={
-                                <Image
-                                    src={images[(activeIndex + 1) % images.length].low.src}
-                                    preview={false}
-                                    alt="gallery image loading"
-                                />
-                            }
+                        <GallerySlides
+                            images={[...images.slice(1), images[0]]}
+                            isReverse={isReverse}
+                            activeIndex={activeIndex}
+                            previousIndex={previousIndex}
+                            className="small-gallery-1"
                         />
-                        <Image
-                            src={images[(activeIndex + 2) % images.length].high.src}
-                            alt="gallery image"
-                            placeholder={
-                                <Image
-                                    src={images[(activeIndex + 2) % images.length].low.src}
-                                    preview={false}
-                                    alt="gallery image loading"
-                                    className="loading-image"
-                                />
-                            }
+                        <GallerySlides
+                            images={[...images.slice(2), images[0], images[1]]}
+                            isReverse={isReverse}
+                            activeIndex={activeIndex}
+                            previousIndex={previousIndex}
+                            className="small-gallery-2"
                         />
                     </div>
                     <CarouselControl
