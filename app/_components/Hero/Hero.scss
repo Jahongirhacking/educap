@@ -13,9 +13,13 @@
   background-position: center;
   background-size: cover;
   margin-top: 75px;
-  padding-top: 385px;
+  // padding-top: 385px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: calc(100dvh - 75px);
 
   &:hover {
     &::before {
