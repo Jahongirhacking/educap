@@ -62,6 +62,12 @@
       flex: 1;
       max-width: min(576px, 100%);
       min-height: 393px;
+
+      .big-gallery {
+        .ant-image {
+          height: 100%;
+        }
+      }
     }
 
     .gallery__nav {
