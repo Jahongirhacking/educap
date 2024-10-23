@@ -10,7 +10,6 @@ import {
   slider4,
   slider5,
   slider6,
-  slider7,
 } from "@/assets/images";
 import ITeam from "@/types/ITeam";
 import { StaticImageData } from "next/image";
@@ -52,7 +51,6 @@ export const carouselPrizeFundImages: StaticImageData[] = [
   slider4,
   slider5,
   slider6,
-  slider7,
 ];
 
 export const carouselGalleryImages: StaticImageData[] = [

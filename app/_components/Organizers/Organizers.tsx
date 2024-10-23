@@ -47,24 +47,24 @@ const Organizers = () => {
                 <div className="media__flex">
                     <div className="media__grid grid-left">
                         <div className="media__card">
-                            <Image src={team1} alt="team image" width={276} />
+                            <Image src={team1} alt="team image" width={276} className="team-image-1" />
                             <p>{organizersContent.paragraphs[0]}</p>
                         </div>
 
                         <div className="media__card">
-                            <Image src={team3} alt="team image" width={476} />
+                            <Image src={team3} alt="team image" width={476} className="team-image-3" />
                             <p>{organizersContent.paragraphs[1]}</p>
                         </div>
                     </div>
 
                     <div className="media__grid grid-right">
                         <div className="media__card">
-                            <Image src={team2} alt="team image" width={576} />
+                            <Image src={team2} alt="team image" width={576} className="team-image-2" />
                             <p>{organizersContent.paragraphs[2]}</p>
                         </div>
 
                         <div className="media__card">
-                            <Image src={team4} alt="team image" width={376} />
+                            <Image src={team4} alt="team image" width={376} className="team-image-4" />
                         </div>
                     </div>
                 </div>
