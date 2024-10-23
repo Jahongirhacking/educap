@@ -17,8 +17,8 @@ const Footer = () => {
                     <div className="social__links" style={{ marginLeft: 'auto' }}>
                         {
                             [
-                                { image: tgLogo, href: "https://www.youtube.com/@esportseducup" },
-                                { image: ytLogo, href: "https://t.me/uzbekistancybersport1" }
+                                { image: tgLogo, href: "https://t.me/uzbekistancybersport1" },
+                                { image: ytLogo, href: "https://www.youtube.com/@esportseducup" }
                             ].map((obj, index) => (
                                 <a href={obj.href} key={index}>
                                     <Image
