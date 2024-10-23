@@ -37,7 +37,7 @@ const Carousel = ({ images }: { images: StaticImageData[] }) => {
             setLoaderTime(0);
             loaderIntervalId.current = setInterval(() => {
                 setLoaderTime((prev) => {
-                    if (prev < 15) setClsName('show-img');
+                    if (prev < 25) setClsName('show-img');
                     else if (prev >= 75) setClsName('hide-img');
                     else setClsName('');
                     return Math.min(prev + 1, 100)
