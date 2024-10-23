@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { esportsLogo, tgLogo, vkLogo, ytLogo } from "@/assets/logos";
+import { esportsLogo, tgLogo, ytLogo } from "@/assets/logos";
 import "./Footer.scss";
 import { Flex, Typography } from "antd";
 
@@ -16,12 +16,15 @@ const Footer = () => {
                 <Flex vertical gap={15}>
                     <div className="social__links" style={{ marginLeft: 'auto' }}>
                         {
-                            [tgLogo, ytLogo, vkLogo].map((image, index) => (
-                                <a href="#" key={index}>
+                            [
+                                { image: tgLogo, href: "https://www.youtube.com/@esportseducup" },
+                                { image: ytLogo, href: "https://t.me/uzbekistancybersport1" }
+                            ].map((obj, index) => (
+                                <a href={obj.href} key={index}>
                                     <Image
                                         width={50}
                                         height={50}
-                                        src={image}
+                                        src={obj.image}
                                         alt="social network image"
                                     />
                                 </a>
