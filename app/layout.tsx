@@ -29,13 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <link rel="icon" href="./innovation_logo.png"></link>
+      <link rel="icon" href="./logo.png"></link>
       <Head>
         <meta name="description" content={metadata.description as string} />
         <meta property="og:title" content={metadata.openGraph!.title as string} />
         <meta property="og:description" content={metadata.openGraph!.description as string} />
         <meta property="og:image" content={(metadata.openGraph!.images as Array<{ url: string }>)[0].url} />
-        <link rel="icon" href="/innovation_logo.png" />
+        <link rel="icon" href="/logo.png" />
       </Head>
       <body>
         <StoreProvider>
