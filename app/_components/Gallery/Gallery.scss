@@ -60,12 +60,14 @@
 
     .gallery__main-image {
       flex: 1;
-      max-width: min(576px, 100%);
+      max-width: 100%;
       min-height: 393px;
+      aspect-ratio: 3 / 2;
 
       .big-gallery {
         .ant-image {
-          height: 100%;
+          width: 100%;
+          height: auto;
 
           img {
             height: 100%;

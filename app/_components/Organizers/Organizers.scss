@@ -163,8 +163,23 @@
             animation: scaleIn 7s ease infinite;
           }
 
-          .team-image-3 {
+          .team-image-3,
+          .team-image-2 {
             width: 100%;
+            min-width: 150px;
+          }
+
+          .team-image-1,
+          .team-image-4 {
+            min-width: 150px;
+          }
+
+          .team-image-1 {
+            width: 50%;
+          }
+
+          .team-image-1 {
+            width: 80%;
           }
 
           img {
