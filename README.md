@@ -1,6 +1,6 @@
-# Educap Tournament
+# Educup Tournament
 
-Welcome to the Educap Tournament web application. This project is built with Next.js and includes various modern development practices and folder structures to ensure scalability and maintainability.
+Welcome to the Educup Tournament web application. This project is built with Next.js and includes various modern development practices and folder structures to ensure scalability and maintainability.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ Welcome to the Educap Tournament web application. This project is built with Nex
 ## Project Structure
 
 ```bash
-educap/
+educup/
 ├── app/
 │ └── _components/
 │   ├── Carousel/
@@ -59,8 +59,8 @@ These instructions will help you set up and run the project on your local machin
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/educap-tournament.git
-   cd educap-tournament
+   git clone https://github.com/Jahongirhacking/educup-tournament.git
+   cd educup-tournament
    ```
 
 2. Install dependencies:

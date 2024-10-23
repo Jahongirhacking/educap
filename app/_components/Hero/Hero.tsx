@@ -9,7 +9,7 @@ const Hero = () => {
         <section className="page__hero">
             <div className="hero__content pd-h">
                 <div className="hero__content__wrapper">
-                    <h1 className="hero__title">ESports EDUCAP</h1>
+                    <h1 className="hero__title">ESports EDUCUP</h1>
                     <p className="hero__sponsor">{heroContent.sponsor}</p>
                     <strong className="hero__location">{heroContent.location}</strong>
                     <strong className="hero__date">{heroContent.date}</strong>
