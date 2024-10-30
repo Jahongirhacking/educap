@@ -54,6 +54,9 @@ const translations = {
       team: "Команда",
       representatives: "Представители",
     },
+    Footer: {
+      organizer: "Центр развития цифровых образовательных технологий",
+    },
   },
   en: {
     Navbar: {
@@ -111,6 +114,10 @@ const translations = {
       team: "Team",
       representatives: "Representatives",
     },
+    Footer: {
+      organizer:
+        "Center for the development of digital educational technologies",
+    },
   },
   uz: {
     Navbar: {
@@ -166,6 +173,9 @@ const translations = {
     Winners: {
       team: "Jamoa",
       representatives: "Vakil",
+    },
+    Footer: {
+      organizer: "Raqamli ta'lim texnologiyalarini rivojlantirish markazi",
     },
   },
 };

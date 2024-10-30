@@ -2,8 +2,12 @@ import Image from "next/image";
 import { esportsLogo, tgLogo, ytLogo } from "@/assets/logos";
 import "./Footer.scss";
 import { Flex, Typography } from "antd";
+import { useAppSelector } from "@/lib/hooks";
+import translations from "@/locales/translations";
 
 const Footer = () => {
+    const activeLang = useAppSelector(state => state.languageSlice);
+
     return (
         <footer className="page__footer pd-h">
             <div className="footer__wrapper">
@@ -32,7 +36,7 @@ const Footer = () => {
                         }
                     </div>
                     <Typography.Text strong style={{ color: "#fff" }}>
-                        &copy; Raqamli ta&apos;lim texnologiyalarini rivojlantirish markazi
+                        &copy; {translations[activeLang.value].Footer.organizer}
                     </Typography.Text>
                 </Flex>
             </div>
