@@ -63,6 +63,9 @@
       max-width: 100%;
       min-height: 393px;
       aspect-ratio: 3 / 2;
+      @media screen and (max-width: 400px) {
+        aspect-ratio: unset;
+      }
 
       .big-gallery {
         .ant-image {
